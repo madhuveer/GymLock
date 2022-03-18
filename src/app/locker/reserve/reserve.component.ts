@@ -79,29 +79,11 @@ if(!lockerSelected)
         this.setLockInfo(locker,"will be the next reserved one","next");
         this.toastr.warning("Hello,"+(locker.lockerId)+" will be the next reserved one");
       }  
-this.deleteLocker('busy');
+
     }
     return lockerSelected;
   }
 
-  deleteLocker(status:string)
-  {
-    let delIndexes=[];
-    for(let i=0;i<=this.totalLockerCount;i++)
-    {
-if(this.lockers[i].status===status)
-{
-  delIndexes.push(1);
-}
-       
-    }
-
-    delIndexes.forEach(index =>{
-      this.lockers.splice(index,1);
-    });
-
-    this.lockers=this.lockers.filter(locker=>locker.status!=status);
-
-  }
+  
   
 }
